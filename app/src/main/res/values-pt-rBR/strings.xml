@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">github-repo</string>
+    <string name="screen_ranking">Repositórios</string>
+    <string name="screen_in_progress">Tela em construção</string>
+    <string name="last_update">Última atualização: %s</string>
+    <string name="data_could_not_be_loaded">Não foi possível carregar os dados.</string>
+    <string name="try_again">try again</string>
+</resources>

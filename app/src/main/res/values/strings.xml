@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">github-repo</string>
+    <string name="screen_ranking">Repositories</string>
+    <string name="screen_in_progress">In Progress</string>
+    <string name="last_update">Last update: %s</string>
+    <string name="forks" translatable="false">%s forks</string>
+    <string name="data_could_not_be_loaded">Data could not be loaded.</string>
+    <string name="try_again">try again</string>
+
+</resources>
