@@ -86,9 +86,13 @@ dependencies {
     implementation(libs.test.mockk)
     implementation(libs.test.kotlinCoroutines)
     implementation(libs.test.junit)
+    implementation(libs.androidx.paging.testing)
     testImplementation(libs.test.kotest)
+    testImplementation(libs.androidx.paging.common)
+    testImplementation(libs.androidx.paging.testing)
     implementation(libs.androidx.test.espresso.core)
     implementation(libs.androidx.test.ext)
     implementation(libs.androidx.test.runner)
     implementation(libs.androidx.test.rules)
+    testImplementation(kotlin("test"))
 }
