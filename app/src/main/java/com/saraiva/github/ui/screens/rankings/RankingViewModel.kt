@@ -25,17 +25,12 @@ class RankingViewModel @Inject constructor(
 
     val repos: StateFlow<PagingData<GithubRepoEntity>> = _repos.asStateFlow()
 
-
-    init {
-        getTopRepos()
-    }
-
     /**
      * Repositories fetching
      */
 
-    fun getTopRepos() = viewModelScope.launch {
-        repository.getRepos().cachedIn(viewModelScope)
+    fun getTopRepos(hasConnection: Boolean) = viewModelScope.launch {
+        repository.getRepos(hasConnection).cachedIn(viewModelScope)
             .collect { pagingData -> _repos.update { pagingData } }
     }
 

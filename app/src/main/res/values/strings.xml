@@ -6,5 +6,6 @@
     <string name="forks" translatable="false">%s forks</string>
     <string name="data_could_not_be_loaded">Data could not be loaded.</string>
     <string name="try_again">try again</string>
+    <string name="no_internet">No internet connection\n</string>
 
 </resources>
