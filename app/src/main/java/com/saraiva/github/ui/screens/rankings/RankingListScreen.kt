@@ -3,6 +3,7 @@
 package com.saraiva.github.ui.screens.rankings
 
 import android.widget.Toast
+import androidx.activity.compose.LocalActivity
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -31,6 +32,7 @@ import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -45,10 +47,12 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
+import com.saraiva.github.MainActivity
 import com.saraiva.github.R
 import com.saraiva.github.domain.entity.GithubRepoEntity
 import com.saraiva.github.ui.components.ProgressBar
 import com.saraiva.github.ui.screens.rankings.components.CardHorizontalRanking
+import com.saraiva.github.ui.screens.rankings.components.NoInternetMessage
 import com.saraiva.github.ui.theme.spacing
 import kotlinx.coroutines.launch
 
@@ -58,8 +62,9 @@ fun RankingListScreen(
     modifier: Modifier = Modifier,
     viewModel: RankingViewModel = hiltViewModel()
 ) {
+    val connectionState = (LocalActivity.current as MainActivity).checkConnection().collectAsState()
     LaunchedEffect(Unit) {
-        viewModel.getTopRepos()
+        viewModel.getTopRepos(connectionState.value)
     }
     val repos = viewModel.repos.collectAsLazyPagingItems()
     val scrollBehavior =
@@ -83,6 +88,10 @@ fun RankingListScreen(
                 .fillMaxSize()
                 .displayCutoutPadding(),
         ) {
+
+            NoInternetMessage(
+                visible = connectionState
+            )
             PullToRefreshBox(
                 state = rememberPullToRefreshState(),
                 isRefreshing = repos.loadState.refresh is LoadState.Loading && repos.itemCount > 0,
@@ -90,13 +99,13 @@ fun RankingListScreen(
                     repos.refresh();
                 },
             ) {
-                RankingContent(
-                    modifier,
-                    repos,
-                )
-            }
+            RankingContent(
+                modifier,
+                repos,
+            )
         }
     }
+}
 }
 
 @Composable

@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface Repository {
 
-    suspend fun getRepos(): Flow<PagingData<GithubRepoEntity>>
+    suspend fun getRepos(hasConnection: Boolean): Flow<PagingData<GithubRepoEntity>>
 
 }

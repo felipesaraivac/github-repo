@@ -19,6 +19,8 @@ pagingRuntime = "3.3.6"
 retrofitVersion = "2.11.0"
 composeAccompanist = "0.28.0"
 # test libraries
+roomCompiler = "2.7.0"
+roomKtx = "2.7.0"
 testJunit = "5.9.0"
 testMockk = "1.13.2"
 testTurbine = "0.9.0"
@@ -45,6 +47,8 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3",
 androidx-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose" }
 androidx-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "pagingRuntime" }
+androidx-room = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomKtx" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }

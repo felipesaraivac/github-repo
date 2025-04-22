@@ -19,6 +19,8 @@ val light_background = Color(0xFFFCFCFD)
 val light_onBackground = Color(0xFF1B1B1B)
 val light_surface = Color(0xFFFCFCFC)
 val light_onSurface = Color(0xFF1B1B1B)
+val light_error = Color(0xFFFF7847)
+val light_onError = Color.White
 
 val dark_primary = Color.White
 val dark_onPrimary = Color.Black
@@ -36,6 +38,8 @@ val dark_background = Color(0xFF1B1B1C)
 val dark_onBackground = Color(0xFFE2E2E2)
 val dark_surface = Color(0xFF1B1B1B)
 val dark_onSurface = Color(0xFFE2E2E2)
+val dark_error = Color(0xFFFF8C80)
+val dark_onError = Color(0xFFFFD5D5)
 
 val ColorScheme.gain
     get() = Color(0xFF41B450)

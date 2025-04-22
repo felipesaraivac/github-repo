@@ -77,6 +77,9 @@ dependencies {
     implementation(libs.hilt.android)
 
     ksp (libs.hilt.android.compiler)
+
+    implementation (libs.androidx.room)
+    ksp( libs.androidx.room.compiler)
     debugImplementation(libs.androidx.ui.tooling)
 
     implementation(libs.androidx.test.core)
